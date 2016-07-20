@@ -6,8 +6,6 @@ You need to have python(>=3.4) and mongodb installed(>=3.0), then run
 ```
 python app.py
 ```
-For vscode users, to enable intellisense, run
-```
 
 ## Including
 * [coin-or pulp](https://github.com/coin-or/pulp)
