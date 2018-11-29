@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, current_app, jsonify
 from bson import json_util, ObjectId
 from bson.errors import InvalidId
 import dal as DAL
@@ -12,7 +12,7 @@ def scenario_endpoint(scenario_id):
     try:
         object_id = ObjectId(scenario_id)
     except (InvalidId, TypeError) as e:
-        # app.logger.warning(e)
+        current_app.logger.warning(e)
         return jsonify(error='scenario id not valid'), 200
     else:
         result = json_util.dumps(
